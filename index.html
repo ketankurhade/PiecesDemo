@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lionel Messi Fact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="fact-title">Fact Title</h1>
+        <p id="fact-detail">Fact Detail</p>
+        <button id="next-fact">Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                fact: "Full Name",
+                detail: "Lionel Andrés Messi"
+            },
+            {
+                fact: "Date of Birth",
+                detail: "June 24, 1987"
+            },
+            {
+                fact: "Nationality",
+                detail: "Argentinian"
+            },
+            {
+                fact: "Position",
+                detail: "Forward"
+            },
+            {
+                fact: "Current Club",
+                detail: "Inter Miami CF"
+            },
+            {
+                fact: "Previous Club",
+                detail: "FC Barcelona"
+            },
+            {
+                fact: "Height",
+                detail: "1.70 m (5 ft 7 in)"
+            },
+            {
+                fact: "Major Awards",
+                detail: "7 Ballon d'Or titles"
+            },
+            {
+                fact: "International Achievements",
+                detail: "Won the Copa America in 2021"
+            },
+            {
+                fact: "Goals Scored",
+                detail: "Over 700 career goals"
+            }
+        ];
+
+        let currentFactIndex = 0;
+
+        function displayFact() {
+            const factTitle = document.getElementById('fact-title');
+            const factDetail = document.getElementById('fact-detail');
+            
+            factTitle.textContent = facts[currentFactIndex].fact;
+            factDetail.textContent = facts[currentFactIndex].detail;
+        }
+
+        document.getElementById('next-fact').addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            displayFact();
+        });
+
+        // Display the first fact on page load
+        displayFact();
+    </script>
+</body>
+</html>
